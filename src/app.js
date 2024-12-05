@@ -5,7 +5,7 @@ function App() {
   const [message, setMessage] = useState('');
 
   const fetchData = () => {
-    fetch('http://localhost:5000/api')
+    fetch('http://34.8.97.15:5000/api')
       .then(response => response.json())
       .then(data => setMessage(data.message))
       .catch(error => console.error('Error fetching data:', error));
@@ -15,7 +15,7 @@ function App() {
     <div className="App">
       <header className="App-header">
       <h1>Welcome to Lea Eliezrov React App</h1>
-        <button /*onClick={fetchData}*/ className="fetch-button">Fetch backend</button>
+        <button onClick={fetchData} className="fetch-button">Fetch backend</button>
         <p>{message}</p>
       </header>
     </div>
