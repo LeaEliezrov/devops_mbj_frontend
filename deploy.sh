@@ -27,6 +27,6 @@ npm run build
 
 # 4. העלאה ל-GCS
 echo "Deploying to Google Cloud Storage..."
-gsutil -m cp -r build/* gs://YOUR_BUCKET_NAME
+gsutil -m cp -r build/* gs://eliezrov-lea-bucket2
 
 
