@@ -18,15 +18,21 @@ else
   echo "Pushing changes to GitHub..."
   git push origin main  # or the relevant branch, e.g., 'master'
 fi
+
+# Step 4: Install dependencies
 echo "Installing dependencies..."
 npm install
 
-# 3. בניית האפליקציה לייצור
+# Step 5: Build the app for production
 echo "Building the app for production..."
 npm run build
 
-# 4. העלאה ל-GCS
+# Step 6: Deploy to Google Cloud Storage
 echo "Deploying to Google Cloud Storage..."
-gsutil -m cp -r build/* gs://eliezrov-lea-bucket2
-
-
+BUCKET_NAME="eliezrov-lea-bucket2" # Replace with your bucket name
+if [ -d "build" ]; then
+  gcloud storage cp --recursive build/* gs://$BUCKET_NAME
+  echo "Deployment to GCS completed."
+else
+  echo "Build directory not found. Ensure the app was built successfully."
+fi
