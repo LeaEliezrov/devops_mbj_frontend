@@ -12,7 +12,7 @@ else
 
   # Step 2: Commit the changes
   echo "Committing changes..."
-  git commit -m "Automated commit: Changes pushed by deploy script"
+  git commit -m "Changes pushed by deploy script"
 
   # Step 3: Push changes to the specified GitHub branch
   echo "Pushing changes to GitHub..."
